@@ -29,16 +29,22 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead");
+if(video.currentTime < video.duration  )
 	video.currentTime += 5;
+else{
+	video.currentTime = 0;
+}
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute");
 	if (video.muted === false) {
        video.muted = true;
+			 this.innerHTML = "Unmute";
 }
-else {
+	else {
         video.muted = false;
+				this.innerHTML = "Mute"
     }
 });
 
