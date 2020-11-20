@@ -42,7 +42,12 @@ document.querySelector("#volumeSlider").addEventListener("click", function() {
 	 video.volume = this.value / 100;
 });
 
-document.querySelector("old").addEventListener("click", function() {
-	console.log("Volume Adjusted");
-	 video.volume = this.value / 100;
+document.querySelector("#old").addEventListener("click", function() {
+	console.log("Old School");
+	 video.classList.add("oldTime");
+});
+
+document.querySelector("#original").addEventListener("click", function() {
+	console.log("Original");
+	 video.classList.remove("oldTime");
 });
