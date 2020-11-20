@@ -34,12 +34,18 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute");
-	video.muted = true;
+	if (video.muted === false) {
+       video.muted = true;
+}
+else {
+        video.muted = false;
+    }
 });
 
 document.querySelector("#volumeSlider").addEventListener("click", function() {
 	console.log("Volume Adjusted");
 	 video.volume = this.value / 100;
+	 vol=video.volume;
 });
 
 document.querySelector("#old").addEventListener("click", function() {
