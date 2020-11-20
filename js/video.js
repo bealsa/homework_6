@@ -2,11 +2,14 @@ var video;
 
 window.addEventListener("load", function() {
 	video = document.querySelector("#myVideo");
+	console.log("Starting");
+	console.log(video);
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	let vol= document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -35,6 +38,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 document.querySelector("#volumeSlider").addEventListener("click", function() {
+	console.log("Volume Adjusted");
+	 video.volume = this.value / 100;
+});
+
+document.querySelector("old").addEventListener("click", function() {
 	console.log("Volume Adjusted");
 	 video.volume = this.value / 100;
 });
