@@ -33,3 +33,8 @@ document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute");
 	video.muted = true;
 });
+
+document.querySelector("#volumeSlider").addEventListener("click", function() {
+	console.log("Volume Adjusted");
+	 video.volume = this.value / 100;
+});
